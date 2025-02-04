@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dheerendra Prajapati - Software Developer</title>
+    <link rel="stylesheet" href="portfolio.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Rotating Name in Multiple Languages
+        const nameElement = document.getElementById("rotating-name");
+
+        if (nameElement) {
+          // Ensure the element exists before running the script
+          const names = [
+            "Dheerendra Prajapati",
+            "धीरेंद्र प्रजापति", // Hindi
+            "ధీరేంద్ర ప్రజాపతి", // Telugu
+            "ಧೀರೇಂದ್ರ ಪ್ರಜಾಪತಿ", // Kannada
+            "ધીന്ദ്ര પ્રજાપતિ", // Gujarati
+            "ধীরেন্দ্র প্রজাপতি", // Bengali
+          ];
+          let index = 0;
+
+          setInterval(() => {
+            nameElement.textContent = names[index];
+            index = (index + 1) % names.length;
+          }, 2000);
+        } else {
+          console.error("Element with ID 'rotating-name' not found!");
+        }
+      });
+    </script>
+    <style>
+      /* General Styles */
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #ff6f61, #ffcc00);
+        color: #fff;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Attractive Header */
+      .header {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        color: white;
+        padding: 50px 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      header h1 {
+        font-size: 3rem;
+        margin: 0;
+        animation: rotateName 10s infinite;
+      }
+
+      header p {
+        font-size: 2rem;
+        margin: 10px 0 0;
+      }
+
+      .header-title {
+        flex-grow: 1;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .profile-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      /* About Section with Left-Right Layout */
+      /* #about {
+        display: flex;
+        flex-direction: column;
+        padding: 50px 0;
+      } */
+      /* #about {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 0;
+      } */
+
+      .about-content {
+        flex: 2;
+      }
+      #about h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      #about p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .about-img {
+        flex: 1;
+        text-align: left;
+      }
+
+      .about-img img {
+        width: 300px;
+        height: auto;
+        border-radius: 100px;
+      }
+
+      /* Skills Section */
+      #skills {
+        padding: 50px 0;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+      }
+
+      .skill {
+        text-align: center;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .skill:hover {
+        transform: scale(1.1);
+      }
+
+      .skill i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      /* Deployment Platforms */
+      #deployment {
+        padding: 50px 0;
+      }
+
+      #deployment h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .deployment-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .platforms {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+      }
+
+      .platform {
+        text-align: center;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .platform:hover {
+        transform: scale(1.1);
+      }
+
+      .platform i {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .image {
+        flex: 1;
+        text-align: right;
+      }
+
+      .image img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 20px 0;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+      }
+
+      footer h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      footer p {
+        font-size: 1.1rem;
+        margin: 5px 0;
+      }
+
+      .social-links {
+        margin-top: 10px;
+        padding: 20px;
+      }
+      .social-links a {
+        color: #fff;
+        font-size: 1.5rem;
+        margin: 0 10px;
+        padding: 30px;
+        transition: color 0.3s ease;
+      }
+
+      /* Social Icons Styling */
+      .social-icon {
+        font-size: 2rem; /* Icon size */
+        color: white;
+        padding: 20px;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .social-icon:hover {
+        color: #facc15; /* Yellow on hover */
+        transform: scale(1.2); /* Slight zoom effect */
+      }
+
+      .social-links a:hover {
+        color: #ebf0f6;
+      }
+
+      /* Experience Section */
+      #experience {
+        padding: 50px 0;
+      }
+
+      #experience h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .experience-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+      }
+
+      .company-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #ffcc00;
+      }
+
+      .duration {
+        font-size: 1rem;
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+
+      .responsibilities {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .responsibilities li {
+        margin-bottom: 8px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .responsibilities li::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: #ff6f61;
+        font-weight: bold;
+      }
+
+      /* Responsive Styling */
+      @media screen and (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+        #about {
+          flex-direction: column;
+        }
+        .about-img img {
+          width: 200px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .header-title {
+          font-size: 1.5rem;
+        }
+        .about-img img {
+          width: 150px;
+        }
+      }
+
+      @keyframes scrollLeftToRight {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      @keyframes scrollRightToLeft {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      /* Apply the animations */
+      @keyframes scrollLeftToRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Apply the animations to the scrolling sections */
+.scroll-left-to-right {
+  animation: scrollLeftToRight 15s linear infinite;
+}
+
+.scroll-right-to-left {
+  animation: scrollRightToLeft 15s linear infinite;
+}
+
+/* Common styles for tech icons */
+.tech-icon {
+  font-size: 80px; /* Increased icon size */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tech-icon:hover {
+  transform: scale(1.3); /* Slight zoom effect */
+  color: #fff;
+}
+
+/* Specific Icon Colors */
+.react-icon {
+  color: #61dafb;
+}
+
+.nodejs-icon {
+  color: #6cc24a;
+}
+
+.database-icon {
+  color: #f29200;
+}
+
+.css-icon {
+  color: #2965f1;
+}
+
+.html5-icon {
+  color: #e34f26;
+}
+
+.tailwind-icon {
+  color: #38bdf8;
+}
+
+.github-icon {
+  color: #333;
+}
+
+.postman-icon {
+  color: #ff6f61;
+}
+
+.aws-icon {
+  color: #ff9900;
+}
+
+.netlify-icon {
+  color: #00c7b7;
+}
+
+.java-icon {
+  color: #f7b731;
+}
+
+.cogs-icon {
+  color: #9ca3af;
+}
+
+.microblog-icon {
+  color: #6b4fbb;
+}
+
+.mobile-icon {
+  color: #4f92f1;
+}
+
+.cloud-icon {
+  color: #4d9df7;
+}
+
+/* Right Scroll specific colors */
+.angular-icon {
+  color: #dd0031;
+}
+
+.vuejs-icon {
+  color: #42b883;
+}
+
+.firebase-icon {
+  color: #ffcb2b;
+}
+
+.js-icon {
+  color: #f7df1e;
+}
+
+.git-icon {
+  color: #f1502f;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .scroll-left-to-right,
+  .scroll-right-to-left {
+    flex-wrap: nowrap; /* Ensure all icons stay in one row */
+    overflow-x: auto; /* Allow horizontal scrolling if the icons don't fit */
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .tech-icon {
+    font-size: 60px; /* Smaller size for mobile view */
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-icon {
+    font-size: 50px; 
+    padding: 10px;/* Further reduce icon size for very small screens */
+  }
+}
+    </style>
+  </head>
+  <body class="bg-black">
+    <!-- Attractive Header -->
+    <!-- Scrolling Background -->
+
+    <header class="header">
+      <h1 id="rotating-name" class="header-title">Dheerendra Prajapati</h1>
+      <p>Software Developer || MERN Stack || React.js</p>
+    </header>
+
+    <div class="relative ">
+      <!-- Left to Right Scroll -->
+      <div
+        class="scroll-left-to-right absolute top-0 left-0 flex space-x-6 text-4xl py-4 px-8"
+      >
+        <i class="fab fa-react tech-icon react-icon"></i>
+        <i class="fab fa-node-js tech-icon nodejs-icon"></i>
+        <i class="fas fa-database tech-icon database-icon"></i>
+        <i class="fab fa-css3-alt tech-icon css-icon"></i>
+        <i class="fab fa-html5 tech-icon html5-icon"></i>
+        <i class="fab fa-tailwindcss tech-icon tailwind-icon"></i>
+        <i class="fab fa-github tech-icon github-icon"></i>
+        <i class="fab fa-postman tech-icon postman-icon"></i>
+        <i class="fab fa-aws tech-icon aws-icon"></i>
+        <i class="fab fa-netlify tech-icon netlify-icon"></i>
+        <i class="fab fa-java tech-icon java-icon"></i>
+        <i class="fas fa-cogs tech-icon cogs-icon"></i>
+        <i class="fab fa-microblog tech-icon microblog-icon"></i>
+        <i class="fas fa-mobile-alt tech-icon mobile-icon"></i>
+        <i class="fas fa-cloud tech-icon cloud-icon"></i>
+      </div>
+
+      <!-- Right to Left Scroll -->
+      <div
+        class="scroll-right-to-left absolute bottom-0 right-0 flex space-x-6 text-4xl py-4 px-8"
+      >
+        <i class="fab fa-angular tech-icon angular-icon"></i>
+        <i class="fab fa-vuejs tech-icon vuejs-icon"></i>
+        <i class="fab fa-node-js tech-icon nodejs-icon"></i>
+        <i class="fab fa-firebase tech-icon firebase-icon"></i>
+        <i class="fab fa-js tech-icon js-icon"></i>
+        <i class="fab fa-css3-alt tech-icon css-icon"></i>
+        <i class="fab fa-html5 tech-icon html5-icon"></i>
+        <i class="fab fa-git tech-icon git-icon"></i>
+        <i class="fas fa-database tech-icon database-icon"></i>
+        <i class="fab fa-aws tech-icon aws-icon"></i>
+        <i class="fab fa-netlify tech-icon netlify-icon"></i>
+        <i class="fab fa-java tech-icon java-icon"></i>
+        <i class="fas fa-cogs tech-icon cogs-icon"></i>
+        <i class="fab fa-microblog tech-icon microblog-icon"></i>
+        <i class="fas fa-mobile-alt tech-icon mobile-icon"></i>
+        <i class="fas fa-cloud tech-icon cloud-icon"></i>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="container flex-col md:flex md:flex-row md:justify-between md:items-center py-16"
+    >
+      <div class="about-img md:w-1/2 text-center md:text-right">
+        <img
+          src="dheerendra-passpost .jpeg"
+          alt="Profile Image"
+          class="w-48 h-48 rounded-full object-cover mx-auto md:mx-0"
+        />
+      </div>
+      <div class="about-content md:w-1/2">
+        <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+        <p class="text-lg mb-4">
+          Hello! I'm <strong>Dheerendra Prajapati</strong>, a highly motivated
+          and passionate software developer with
+          <strong>1.8 years of experience</strong> in developing high-scale
+          enterprise applications using the <strong>MERN stack</strong>.
+        </p>
+        <p class="text-lg mb-4">
+          My expertise includes
+          <strong
+            >React.js, Node.js, MongoDB, HTML, CSS, JavaScript, Tailwind CSS,
+            Visual Studio Code, Postman, GitHub, and Netlify</strong
+          >. I have actively contributed to applications at every stage of the
+          development cycle, including
+          <strong
+            >requirement gathering, design analysis, development, testing, and
+            deployment</strong
+          >
+          following Agile methodology.
+        </p>
+        <p class="text-lg mb-4">
+          I have a strong foundation in
+          <strong>object-oriented programming</strong> and a deep understanding
+          of <strong>JavaScript development</strong>. I am always eager to apply
+          my skills in a collaborative environment, where I can enhance my
+          expertise, work alongside experienced professionals, and contribute to
+          building innovative software solutions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="container">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <h3>Software Developer</h3>
+        <p class="company-name">Manasvi Technologies OPC Pvt Ltd</p>
+        <p class="duration">JUNE 2023 - Present</p>
+        <ul class="responsibilities">
+          <li>
+            Developed high-scale enterprise applications using MERN Stack.
+          </li>
+          <li>
+            Worked on all phases of development: requirement gathering, design,
+            development, testing, and deployment.
+          </li>
+          <li>
+            Collaborated in Agile development teams to deliver scalable software
+            solutions.
+          </li>
+          <li>
+            Implemented RESTful APIs and optimized database queries for
+            performance improvement.
+          </li>
+          <li>
+            Deployed applications on platforms like Netlify, GitHub Pages, and
+            OnRender.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
+
+      <div class="bg-white text-black p-6 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold">Inventory Management System</h3>
+        <p class="text-lg font-bold text-blue-600">
+          Tech Stack: React.js, Node.js,Express.js, MongoDB, Tailwind CSS
+        </p>
+        <p class="text-lg font-bold text-blue-600">
+          📌 Key Sections: Admin Dashboard, Staff Dashboard, Role-based
+          Authentication, Real-Time Stock Management, Automated Alerts &amp;
+          Notifications, Product Categorization &amp; Barcode Scanning,
+          Customer, Vendor, and Manufacturer Management, Sales and Purchase
+          Reports, Subscription Plan Management, Invoicing, Returns, and Payment
+          Integration, Employee Dashboard &amp; Payroll Integration,
+        </p>
+
+        <p class="mt-4 text-gray-700">
+          The **Inventory Management System** is a web-based application
+          designed to **efficiently track, manage, and optimize inventory
+          levels** for businesses. It helps organizations **streamline stock
+          control, reduce wastage, and enhance operational efficiency**.
+        </p>
+
+        <h4 class="text-xl font-semibold mt-4">Key Features:</h4>
+        <ul class="mt-2 space-y-2">
+          <li class="flex items-center">
+            <span class="text-green-500 font-bold mr-2">✔</span> Admin Dashboard
+            for real-time stock management
+          </li>
+          <li class="flex items-center">
+            <span class="text-green-500 font-bold mr-2">✔</span> Role-based
+            authentication for Admin and Users
+          </li>
+          <li class="flex items-center">
+            <span class="text-green-500 font-bold mr-2">✔</span> Automated
+            low-stock alerts and notifications
+          </li>
+          <li class="flex items-center">
+            <span class="text-green-500 font-bold mr-2">✔</span> Barcode
+            scanning and product categorization
+          </li>
+          <li class="flex items-center">
+            <span class="text-green-500 font-bold mr-2">✔</span> Secure API
+            integration and database optimization
+          </li>
+          <li class="flex items-center">
+            <span class="text-green-500 font-bold mr-2">✔</span> Interactive
+            dashboard with analytics and reports
+          </li>
+          <li class="flex items-center">
+            <span class="text-green-500 font-bold mr-2">✔</span> Customer,
+            Vendor, and Manufacturer Management
+          </li>
+          <li class="flex items-center">
+            <span class="text-green-500 font-bold mr-2">✔</span> Sales and
+            Purchase Reports
+          </li>
+          <li class="flex items-center">
+            <span class="text-green-500 font-bold mr-2">✔</span> Subscription
+            Plan management
+          </li>
+        </ul>
+
+        <h4 class="text-xl font-semibold mt-4">Additional Features:</h4>
+        <ul class="mt-2 space-y-2">
+          <li class="flex items-center">
+            <span class="text-blue-500 font-bold mr-2">✔</span> Invoicing and
+            Returns Management
+          </li>
+          <li class="flex items-center">
+            <span class="text-blue-500 font-bold mr-2">✔</span> Employee
+            Dashboard and Payroll Integration
+          </li>
+          <li class="flex items-center">
+            <span class="text-blue-500 font-bold mr-2">✔</span> Inventory and
+            Stock Management
+          </li>
+          <li class="flex items-center">
+            <span class="text-blue-500 font-bold mr-2">✔</span> Payment Gateway
+            Integration
+          </li>
+          <li class="flex items-center">
+            <span class="text-blue-500 font-bold mr-2">✔</span> Purchase, Sale,
+            and Product Category Management
+          </li>
+          <li class="flex items-center">
+            <span class="text-blue-500 font-bold mr-2">✔</span> Order Tracking
+            and Customer Support
+          </li>
+        </ul>
+
+        <div class="mt-6 flex space-x-4">
+          <p>
+            <a
+              href="https://account-27-08-2024.onrender.com/"
+              target="_blank"
+              class="bg-blue-600 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition-all"
+              title="Live Demo"
+            >
+              <i class="fas fa-desktop text-2xl mr-2"></i> Live Demo
+            </a>
+          </p>
+
+          <a
+            href="https://github.com/PrajapatiDheerendra45/inventory.git"
+            target="_blank"
+            class="bg-gray-800 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-gray-900 transition-all"
+            title="GitHub Repo"
+          >
+            <i class="fab fa-github text-2xl mr-2"></i> GitHub Repo
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+   <!-- Skills Section -->
+<section id="skills" class="container">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill" style="color: #e34c26;"><i class="fab fa-html5"></i> HTML</div>
+      <div class="skill" style="color: #264de4;"><i class="fab fa-css3-alt"></i> CSS</div>
+      <div class="skill" style="color: #f0db4f;"><i class="fab fa-js"></i> JavaScript</div>
+      <div class="skill" style="color: #61dbfb;"><i class="fab fa-react"></i> React.js</div>
+      <div class="skill" style="color: #68a063;"><i class="fab fa-node-js"></i> Node.js</div>
+      <div class="skill" style="color: #4db33d;"><i class="fas fa-database"></i> MongoDB</div>
+      <div class="skill" style="color: #00758f;"><i class="fas fa-database"></i> MySQL</div>
+      <div class="skill" style="color: #f89820;"><i class="fab fa-java"></i> Java</div>
+      <div class="skill" style="color: #00599c;"><i class="fas fa-code"></i> C++</div>
+      <div class="skill" style="color: #a8b9cc;"><i class="fas fa-code"></i> C</div>
+    </div>
+  </section>
+  
+  <!-- Deployment Platforms Section -->
+  <section id="deployment" class="container">
+    <h2>Deployment Platforms</h2>
+    <div class="deployment-content">
+      <div class="platforms">
+        <div class="platform" style="color: #ff9900;"><i class="fab fa-aws"></i> AWS</div>
+        <div class="platform" style="color: #00ad9f;"><i class="fas fa-cloud"></i> Netlify</div>
+        <div class="platform" style="color: #181717;"><i class="fab fa-github"></i> GitHub Pages</div>
+        <div class="platform" style="color: #ffca28;"><i class="fab fa-google"></i> Firebase</div>
+        <div class="platform" style="color: #0078d4;"><i class="fab fa-microsoft"></i> Azure</div>
+        <div class="platform" style="color: #0080ff;"><i class="fab fa-digital-ocean"></i> DigitalOcean</div>
+        <div class="platform" style="color: #000000;"><i class="fab fa-vercel"></i> Vercel</div>
+        <div class="platform" style="color: #430098;"><i class="fab fa-heroku"></i> Heroku</div>
+        <div class="platform" style="color: #5e5e5e;"><i class="fas fa-server"></i> OnRender</div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-10">
+      <div class="container mx-auto text-center px-6">
+        <h2 class="text-3xl font-bold text-yellow-400 mb-4">Contact Me</h2>
+        <p class="text-lg">
+          Email:
+          <a
+            href="mailto:prajapatidheerendra@gmail.com"
+            class="text-blue-400 hover:text-blue-500 transition"
+          >
+            prajapatidheerendra@gmail.com
+          </a>
+        </p>
+        <p class="text-lg mt-2">
+          Phone:
+          <a
+            href="tel:+916260470125"
+            class="text-blue-400 hover:text-blue-500 transition"
+          >
+            +91 6260470125
+          </a>
+        </p>
+        <div class="flex justify-center space-x-6 mt-6">
+          <a
+            href="https://www.linkedin.com/in/dheerendra-prajapati-software-developer-378274247/"
+            class="social-icon"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://github.com/PrajapatiDheerendra45" class="social-icon"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a
+            href="https://www.facebook.com/dheerendra.pra.7"
+            class="social-icon"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/mrdheerendra/?hl=en"
+            class="social-icon"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+
+        <div class="mt-6 border-t border-gray-600 pt-4">
+          <p class="text-sm">
+            &copy; 2025 Dheerendra Prajapati. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
